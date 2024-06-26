@@ -601,7 +601,8 @@ export class SessionRecording {
     }
 
     private _tryTakeFullSnapshot(): boolean {
-        return this._tryRRWebMethod(newQueuedEvent(() => this.rrwebRecord!.takeFullSnapshot()))
+        // return this._tryRRWebMethod(newQueuedEvent(() => this.rrwebRecord!.takeFullSnapshot()))
+        return true
     }
 
     private _onScriptLoaded() {
@@ -622,6 +623,7 @@ export class SessionRecording {
             collectFonts: false,
             inlineStylesheet: true,
             recordCrossOriginIframes: false,
+            inlineImages: true,
         }
 
         // only allows user to set our allow-listed options
